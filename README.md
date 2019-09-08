@@ -43,7 +43,7 @@
 
 >  MCD Scores
 
-![](img/Minimum Covariance Determinant (MCD)_AnomalyScores.png)
+![](img/MCD_AnomalyScores.png)
 
 >  Feature Bagging Scores
 
@@ -51,7 +51,7 @@
 
 > Local Outlier Factor (LOF)  Scores
 
-![](img/Local Outlier Factor %28LOF%29_AnomalyScores.png)
+![](img/LOF_AnomalyScores.png)
 
 > Isolation Forest Scores
 
