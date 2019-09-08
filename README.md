@@ -59,7 +59,7 @@
 
 > HBOS  Scores
 
-![](img/Histogram-base Outlier Detection \(HBOS\)_AnomalyScores.png)
+![](img/Histogram-base Outlier Detection (HBOS%28_AnomalyScores.png)
 
 > KNN  Scores
 
