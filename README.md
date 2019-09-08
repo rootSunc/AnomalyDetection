@@ -26,7 +26,8 @@
 	- LSCP
 
 ***
-###Performance by Pyod
+
+### Performance by Pyod
 
 > Training data GroundTruth
 
@@ -42,7 +43,7 @@
 
 >  MCD Scores
 
-![](img/Minimum Covariance Determinant %28MCD%29_AnomalyScores.png)
+![](img/Minimum Covariance Determinant (MCD)_AnomalyScores.png)
 
 >  Feature Bagging Scores
 
@@ -58,7 +59,7 @@
 
 > HBOS  Scores
 
-![](img/Histogram-base Outlier Detection %28HBOS%29_AnomalyScores.png)
+![](img/Histogram-base Outlier Detection \(HBOS\)_AnomalyScores.png)
 
 > KNN  Scores
 
