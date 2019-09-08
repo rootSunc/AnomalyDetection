@@ -47,7 +47,7 @@
 
 >  Feature Bagging Scores
 
-![](img/Feature Bagging_AnomalyScores.png)
+![](img/Feature_Bagging_AnomalyScores.png)
 
 > Local Outlier Factor (LOF)  Scores
 
@@ -55,7 +55,7 @@
 
 > Isolation Forest Scores
 
-![](img/Isolation Forest_AnomalyScores.png)
+![](img/Isolation_Forest_AnomalyScores.png)
 
 > HBOS  Scores
 
@@ -67,7 +67,7 @@
 
 > Average kNN Scores
 
-![](img/Average KNN_AnomalyScores.png)
+![](img/Average_KNN_AnomalyScores.png)
 
 > OCSVM Scores
 
@@ -76,3 +76,6 @@
 > CBLOF Scores
 
 ![](img/CBLOF_AnomalyScores.png)
+
+
+anomalyScore越高就表示这个点异常程度就越大，至于将哪些点定位异常值，这取决于我们如何划定边界
