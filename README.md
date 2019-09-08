@@ -19,4 +19,3 @@
 	- Isolation Forest
 	- Feature Bagging
 	- LSCP
-
