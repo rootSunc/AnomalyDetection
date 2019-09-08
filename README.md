@@ -59,11 +59,11 @@
 
 > HBOS  Scores
 
-![](img/Histogram-base Outlier Detection (HBOS%28_AnomalyScores.png)
+![](img/HBOS_AnomalyScores.png)
 
 > KNN  Scores
 
-![](img/K Nearest Neighbors %28KNN%29_AnomalyScores.png)
+![](img/KNN_AnomalyScores.png)
 
 > Average kNN Scores
 
@@ -71,8 +71,8 @@
 
 > OCSVM Scores
 
-![](img/One-class SVM %28OCSVM%29_AnomalyScores.png)
+![](img/OCSVM_AnomalyScores.png)
 
 > CBLOF Scores
 
-![](img/Cluster-based Local Outlier Factor %28CBLOF%29_AnomalyScores.png)
+![](img/CBLOF_AnomalyScores.png)
