@@ -5,7 +5,7 @@
 
 ***
 
-> Note: 摘抄自[PYOD](https://github.com/yzhao062/pyod)作者在知乎上对问题“[数据挖掘中常用的「异常检测」算法有哪些](https://www.zhihu.com/question/280696035)”的回答（知乎id:微调），对异常检测领域涉及的算法做了一个非常好的总结，启发很大，搬运过来存档。
+> Note: 插入一段从全局对异常检测的理解，这是[PYOD](https://github.com/yzhao062/pyod)作者在知乎上对问题“[数据挖掘中常用的「异常检测」算法有哪些](https://www.zhihu.com/question/280696035)”的回答（知乎id:微调），这篇文章对异常检测领域涉及的算法做了一个非常好的总结，启发很大，搬运过来存档。
 [点击查看](resources/outlierDetectionSummary.jpg)
 
 
