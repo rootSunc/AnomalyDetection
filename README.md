@@ -24,6 +24,54 @@
 	- Isolation Forest
 	- Feature Bagging
 	- LSCP
+	
+
+***
+### 异常检测常用模型简介
+
+#### PCA Principal Component Analysis 主成分分析
+
+![](resources/PCA_arch.jpg)
+原向量x乘以矩阵W得到中间编码c（这个过程是**线性的**），再乘以W的转置，得到x head,我们希望x head和x尽可能的接近。
+
+
+#### AutoEncoder 自编码神经网络
+自编码神经网络属于无监督学习，让计算机自己发现输入数据间的规律。和PCA类似，只是中间的网络层数更深，encode的变换是非线性的（加入**非线性**激活函数）
+![](resources/AutoEncoder_arch.jpg)
+
+
+* 欠完备的自编码器 
+* 多层自编码器
+* 卷积自编码器
+* 正则化自编码器
+	- 稀疏自编码器
+	- 降噪自编码器
+
+#### MCD - Minimum Covariance Determinant 
+找出一个给定比例（h）的 “好” 观察值，它们不是离群值， 且可以计算其经验协方差矩阵。 然后将该经验协方差矩阵重新缩放以补偿所执行的观察选择（”consistency step(一致性步骤)”）。 计算最小协方差决定估计器后，可以根据其马氏距离（Mahalanobis distance）给出观测值的权重， 这导致数据集的协方差矩阵的重新加权估计（”reweighting step(重新加权步骤)”）
+
+
+#### OCSVM - One-class SVM 
+参考[这个](https://www.cnblogs.com/wj-1314/p/10701708.html)
+
+
+#### kNN - k Nearest Neighborhood 
+参考[这个](https://www.cnblogs.com/jyroy/p/9427977.html)
+
+#### LOF - Local Outlier Factor
+参考[这个](https://blog.csdn.net/wangyibo0201/article/details/51705966)
+
+#### HBOS - Histogram-base Outlier Detection
+
+
+
+#### Isolation Forest
+
+
+#### Feature Bagging
+
+
+
 
 ***
 
