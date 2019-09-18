@@ -45,3 +45,19 @@ Distance to the k-th neighbor (or mean/median of k distances).
 
 ### LOF
 Ratio of local reachability densities versus neighbors.
+
+
+### HBOS
+Histogram density per feature (independence assumption); fast linear-time screening.
+
+### Isolation Forest
+Anomalies need fewer random partitions; shorter path length ⇒ higher score.
+
+### Feature Bagging
+Train base detectors on random feature subsets and aggregate scores.
+
+### ABOD
+Variance of angles to neighbors; unstable angles indicate outliers.
+
+### CBLOF
+Cluster-based local outlier factor using cluster size and distance to large clusters.
