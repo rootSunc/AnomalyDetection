@@ -4,8 +4,9 @@ Unsupervised outlier detection experiments in Python, built around
 [PyOD](https://github.com/yzhao062/pyod) (2019).
 
 This repo compares classic linear, proximity, density, and ensemble detectors on
-synthetic data, visualizes anomaly scores / decision boundaries, and contrasts
-**PCA** (linear) with a **Keras AutoEncoder** (non-linear reconstruction).
+**synthetic data** and **ODDS real-world benchmarks**, visualizes anomaly scores /
+decision boundaries, and contrasts **PCA** (linear) with a **Keras AutoEncoder**
+(non-linear reconstruction). Jupyter notebooks are included for interactive demos.
 
 ---
 
@@ -15,7 +16,7 @@ synthetic data, visualizes anomaly scores / decision boundaries, and contrasts
 pip install -r requirements.txt
 ```
 
-依赖对齐 2019 年中后期常用版本（PyOD 0.7.x + scikit-learn 0.21 + TF1.14/Keras）。
+依赖对齐 2019 年中后期常用版本（PyOD 0.7.x + scikit-learn 0.21 + TF1.14/Keras + Jupyter）。
 
 ---
 
@@ -29,11 +30,17 @@ python abod_demo.py
 # kNN decision boundary (2D)
 python knn_boundary.py
 
-# multi-model comparison + metrics table
+# multi-model comparison + metrics table (synthetic)
 python compare_models.py
 
 # PCA vs AutoEncoder (needs TensorFlow/Keras)
 python autoencoder_demo.py
+
+# ODDS real-data benchmark (cardio / ionosphere / arrhythmia / pima)
+python benchmark_odds.py
+
+# interactive notebooks
+jupyter notebook notebooks/
 ```
 
 生成的图像写入 `img/`，指标 CSV 写入 `results/`。
@@ -199,19 +206,68 @@ python autoencoder_demo.py
 
 ---
 
+## ODDS 真实数据基准 / Real-data Benchmark
+
+Bundled MATLAB files under `datasets/` (ODDS format: keys `X`, `y`):
+
+| Dataset | n | d | Outliers |
+|---------|--:|--:|---------:|
+| cardio | 1831 | 21 | ~9.6% |
+| ionosphere | 351 | 33 | ~35.9% |
+| arrhythmia | 452 | 274 | ~14.6% |
+| pima | 768 | 8 | ~34.9% |
+
+**Protocol:** 60/40 train-test split → standardize on train → fit unsupervised
+detectors → evaluate ROC-AUC / AP / F1 on the test set
+(`python benchmark_odds.py`).
+
+### Mean metrics across the four datasets
+
+| Model | ROC-AUC | AP | F1 |
+|-------|--------:|---:|---:|
+| Isolation Forest | 0.8412 | 0.6216 | 0.5479 |
+| HBOS | 0.8252 | 0.5942 | 0.5203 |
+| KNN | 0.8217 | 0.5852 | 0.5177 |
+| LOF | 0.8152 | 0.5764 | 0.5066 |
+| Feature Bagging | 0.8151 | 0.5774 | 0.5058 |
+| OCSVM | 0.7964 | 0.5441 | 0.4817 |
+| CBLOF | 0.7819 | 0.5252 | 0.4586 |
+| PCA | 0.7766 | 0.5135 | 0.4501 |
+| ABOD | 0.7502 | 0.4760 | 0.4169 |
+| MCD | 0.7443 | 0.4706 | 0.4125 |
+
+详见 `results/odds_benchmark.csv`。真实数据上 **IForest / HBOS** 往往更稳健；
+高维 `arrhythmia` 明显更难，邻域类方法方差更大。
+
+---
+
+## Notebooks
+
+| Notebook | 内容 |
+|----------|------|
+| `notebooks/01_pyod_quickstart.ipynb` | 合成数据 + kNN 入门 |
+| `notebooks/02_model_comparison.ipynb` | 多模型指标对比 |
+| `notebooks/03_odds_benchmark.ipynb` | ODDS（如 cardio）实战 |
+
+---
+
 ## 项目结构
 
 ```
 .
-├── abod_demo.py          # ABOD 单模型 demo
-├── pca_demo.py           # PCA 单模型 demo
-├── knn_boundary.py       # kNN 决策边界
-├── compare_models.py     # 多模型对比 + 指标
-├── autoencoder_demo.py   # PCA vs AutoEncoder
-├── utils/metrics.py      # ROC-AUC / AP / F1 等
-├── results/              # CSV 指标
-├── img/                  # 分数可视化
-└── resources/            # 架构示意图
+├── abod_demo.py / pca_demo.py
+├── knn_boundary.py
+├── compare_models.py         # synthetic multi-model + metrics
+├── autoencoder_demo.py       # PCA vs AutoEncoder
+├── benchmark_odds.py         # ODDS real-data benchmark
+├── datasets/                 # cardio, ionosphere, arrhythmia, pima
+├── notebooks/                # Jupyter tutorials
+├── utils/
+│   ├── metrics.py
+│   └── data_loading.py
+├── results/                  # CSV metrics
+├── img/                      # score visualizations
+└── resources/                # architecture diagrams
 ```
 
 ---
@@ -223,7 +279,8 @@ python autoencoder_demo.py
 3. Liu, Ting, Zhou — Isolation Forest, ICDM 2008  
 4. Kriegel et al. — Angle-Based Outlier Detection, KDD 2008  
 5. Lazarevic & Kumar — Feature Bagging, 2005  
-6. Zhao, Nasrullah, Li — **PyOD**, arXiv:1901.01588, 2019  
+6. Rayana — **ODDS Library**, http://odds.cs.stonybrook.edu/, 2016  
+7. Zhao, Nasrullah, Li — **PyOD**, arXiv:1901.01588, 2019  
 
 ---
 
