@@ -1,13 +1,18 @@
 # Results
 
-CSV files produced by the demos:
+CSV files produced by the demos / benchmarks:
 
-- `synthetic_comparison.csv` — multi-model ranking on synthetic data
-- `pca_vs_autoencoder.csv` — linear PCA vs Keras AutoEncoder
+| File | Source |
+|------|--------|
+| `synthetic_comparison.csv` | `python compare_models.py` |
+| `pca_vs_autoencoder.csv` | `python autoencoder_demo.py` |
+| `odds_benchmark.csv` | `python benchmark_odds.py` |
+| `odds_benchmark_summary.csv` | mean metrics across ODDS datasets |
 
 Re-run:
 
 ```bash
 python compare_models.py --no-plots
 python autoencoder_demo.py
+python benchmark_odds.py
 ```
